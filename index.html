@@ -11,25 +11,30 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;900&family=Source+Sans+Pro:wght@300;900&display=swap"
         rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="logo">
-        <!-- 
-            Logo Image Here
-         -->
-    </div>
-    <button class="nav-toggle" aria-label="toggle navigation">
-        <span class="hamburger"></span>
-    </button>
-    <nav class="nav">
-        <ul class="nav-list">
-            <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="#service" class="nav-link">My Services</a></li>
-            <li class="nav-item"><a href="#about" class="nav-link">About Me</a></li>
-            <li class="nav-item"><a href="#work" class="nav-link">My Work</a></li>
-        </ul>
-    </nav>
+    <header>
+
+        <div class="logo">
+            <!-- 
+                Logo Image Here
+             -->
+        </div>
+        <button class="nav-toggle" aria-label="toggle navigation" id="btn">
+            <span class="hamburger"> Nav</span>
+        </button>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#service" class="nav-link">My Services</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About Me</a></li>
+                <li class="nav-item"><a href="#work" class="nav-link">My Work</a></li>
+            </ul>
+        </nav>
+
+    </header>
 
     <!-- Introduction -->
     <section class="intro" id="home">
@@ -37,9 +42,9 @@
             Hi, I am <strong> Govind Kulkarni</strong>
         </h1>
         <p class="section-subtitle section-subtitle-intro">
-
+            FULL STACK DEVELOPER
         </p>
-        <img src="images/profile.jpeg" alt="govind-kulkarni">
+        <img src="images/profile.jpeg" alt="govind-kulkarni" class="intro-img">
 
     </section>
 
@@ -73,7 +78,9 @@
     <!-- About Me -->
     <section class="about-me" id="about">
         <h2 class="section-title section-title-about">Who I Am</h2>
-        <p class="section-subtitle section-subtitle-about"></p>
+        <p class="section-subtitle section-subtitle-about">
+            Web Developer Enthusisast.
+        </p>
         <div class="about-me-body">
             <p></p>
             <p></p>
@@ -117,7 +124,7 @@
 
         </ul>
     </footer>
-
+    <script src="app.js"></script>
 
 </body>
 
