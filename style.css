@@ -5,7 +5,7 @@
 }
 
 html{
-    /* scroll-behavior: smooth; */
+    scroll-behavior: smooth;
 }
 
 :root{
@@ -110,8 +110,9 @@ h3 {font-size: var(--fs-h3);}
 
 header{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* since we dont have any logo this is not going to have any effect */
     padding: 1em;
+    
 }
 
 .logo{
@@ -120,7 +121,7 @@ header{
 }
 
 nav{
-    /* display: none; */
+    
     position: fixed;
     background: var(--clr-dark);
     color: var(--clr-light);
@@ -130,9 +131,9 @@ nav{
     right: 0;
     z-index: 100;
 
-    transform: translateX(0%);
-    transition: transform 250m ease-in-out;
-    display: none;
+    transform: translateX(100%);
+    transition: transform 250m ease-in-out; /* here we have an cubic bezier but its complicated so i have used simple ease-in-out here */
+    /* display: none; */
 
 }
 
@@ -158,11 +159,68 @@ nav{
     color: var(--clr-accent);
 }
 
+/* styling hamburger icon */
+
 .hamburger{
+    display: block;
+    position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after{
+    background-color: var(--clr-accent);
+    height: 3px;
+    width: 2em;
+    /* This is giving smooth transitions upon clicking on hamburger */
+    transition: transform 300ms ease-in-out;
+    border-radius: 1em;
+}
+
+.hamburger::before,
+.hamburger::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.hamburger::before{top: 6px;}
+.hamburger::after{bottom: 6px;}
+
+.nav-toggle{
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    z-index: 1000;
+    padding: .5em;
+    /* not getting why following three properties have been added */
+    position: absolute;
+    right: 1em;
+    top: 1em;
 
 }
 
+/* adding animation for hamburger through JS */
+.nav-open .nav{
+    transform: translateX(0);
+}
 
+.nav-open .nav-toggle{
+    position: fixed;
+}
+
+.nav-open .hamburger{
+    transform: rotate(.100turn);
+}
+
+.nav-open .hamburger::after{
+    opacity: 0;
+}
+
+.nav-open .hamburger::before{
+    transform: rotate(90deg) translateX(-6px);
+}
 
 /* styling the intro section */
 
@@ -217,4 +275,41 @@ nav{
 }
 
 
+/* styling the footer */
 
+.footer{
+    background-color: #111;
+    color: var(--clr-accent);
+    text-align: center;
+    font-size: var(--fs-h3);
+}
+
+.footer a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer-link{
+    font-weight: var(--fw-bold);
+   
+}
+
+.footer-link:hover,
+.social-list-link:hover{
+    opacity: 0.6;
+}
+.footer-link:hover{
+    text-decoration: underline;
+}
+
+.social-list{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 2em 0;
+
+}
+
+.social-list-item{
+    margin: 0.5em;
+    padding: 0.5em;
