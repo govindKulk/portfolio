@@ -1,7 +1,10 @@
-// let btn = document.getElementById('btn');
-// let nav = document.getElementsByTagName('nav')[0];
+const  navToggle = document.querySelector(".nav-toggle");
 
-// btn.addEventListener("click", function(){
-//     nav.style.display = 'block';
-//     console.log('btn');
-// })
+const navLinks = document.querySelectorAll(".nav-link")
+navToggle.addEventListener('click',() => {
+    document.body.classList.toggle('nav-open');
+})
+
+navLinks.forEach((link)=>{link.addEventListener('click', ()=>{
+    document.body.classList.remove('nav-open');
+})})
