@@ -274,6 +274,32 @@ nav{
     display: inline-block;
 }
 
+/* styling the work section */
+
+.my-work{
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    text-align: center;
+}
+.portfolio{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+}
+
+.portfolio-item{
+    background-color: var(--clr-accent);
+    overflow: hidden;
+}
+
+.portfolio-img{
+    transition: transform 750ms ease-in-out,  opacity 300ms linear;
+
+}
+
+.portfolio-img:hover{
+    transform: scale(1.2);
+    opacity: 0.5;
+}
 
 /* styling the footer */
 
@@ -313,3 +339,4 @@ nav{
 .social-list-item{
     margin: 0.5em;
     padding: 0.5em;
+}
